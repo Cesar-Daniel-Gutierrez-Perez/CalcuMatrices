@@ -24,7 +24,7 @@ public class Determinante implements Calculo{
         double[][] m = new double [a][b];
         double[][] m1 = new double [(a*2)-1][b];
         String ma = "";
-        if (a==b) {                    
+        if (a==3 && b==3) {                    
             for (int i = 0; i < a; i++) {
                 for (int j = 0; j < b; j++) {
                     m[i][j]=(int)(Math.random()*100);
@@ -73,7 +73,7 @@ public class Determinante implements Calculo{
             }
         }
         else{
-            ma = "Esta matriz no tiene dimensiones cuadradas";
+            ma = "Esta matriz no tiene dimensiones 3x3";
         }
         return ma;
     }    
