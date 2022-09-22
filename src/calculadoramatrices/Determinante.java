@@ -24,15 +24,16 @@ public class Determinante implements Calculo{
         double[][] m = new double [a][b];
         double[][] m1 = new double [(a*2)-1][b];
         String ma = "";
-        if (a==3 && b==3) {                    
+        if (a==3 && b==3) {  //este metodo solo funciona con matrices 3x3                  
             for (int i = 0; i < a; i++) {
                 for (int j = 0; j < b; j++) {
                     m[i][j]=(int)(Math.random()*100);
-                    ma +=m[i][j] + " "; 
+                    ma +=m[i][j] + " "; // guardar la matriz inicial
                 }
                 ma += "\n";
             }
             JOptionPane.showMessageDialog(null,"la matriz generada aleatoreamente es \n" + ma);
+            // procedimiento para sacar determinante de una matriz 3x3 por la regla de sarrus
             for (int i = 0; i < c ; i++) {                
                 for (int j = 0; j < b; j++) {
                     if (a>i){
@@ -41,16 +42,16 @@ public class Determinante implements Calculo{
                     }
                     else{
                         m1[i][j]=m[i-a][j];
-                        System.out.print(m1[i][j] + " ");
+                        System.out.print(m1[i][j] + " ");//creamos una nueva matriz escribiendola de nuevo menos la ultima fila
                     }
                 }
                 System.out.println("");            
             }            
-            for (int k = 0; k < a; k++) {
+            for (int k = 0; k < a; k++) {//repetir el proceso 3 veces para las 3 diagonales
                 for (int i = 0; i < a; i++) {
                     for (int j = 0; j < b; j++) {
                         if(i==j){
-                            r1*=m1[i+in][j];
+                            r1*=m1[i+in][j];//le agregamos un contador para que opere la siguiente diagonal
                         }                                 
                     }                
                 } 
@@ -60,9 +61,8 @@ public class Determinante implements Calculo{
                 for (int i = 0; i < a; i++) {                
                     for (int j = 0; j < b; j++) { 
                         if(i==j){
-                        r2*=m1[i+de][j];
+                        r2*=m1[i+de][j]; //le agregamos un contador para que opere la siguiente diagonal
                         de-=2;
-                            System.out.println(de);
                         }                                  
                     }                    
                 }

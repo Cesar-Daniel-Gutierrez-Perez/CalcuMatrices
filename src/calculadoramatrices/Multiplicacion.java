@@ -21,7 +21,7 @@ public class Multiplicacion implements Calculo{
         for (int i = 0; i < a; i++) {
             for (int j = 0; j < b; j++) {
                 m[i][j]=(int)(Math.random()*100);
-                ma +=m[i][j] + " "; 
+                ma +=m[i][j] + " "; // guardar la matriz inicial
             }
             ma += "\n";
         }
