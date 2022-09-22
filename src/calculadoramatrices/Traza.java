@@ -18,7 +18,7 @@ public class Traza implements Calculo{
         double[][] m = new double [a][b];
         int r = 0;
         String ma = "";
-        if (a==b) {
+        if (a==b) {//la traza solo funciona si la matriz es cuadrada
            for (int i = 0; i < a; i++) {
             for (int j = 0; j < b; j++) {
                 m[i][j]=(int)(Math.random()*100);
